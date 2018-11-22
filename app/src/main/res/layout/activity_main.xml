@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlcontenedor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context="m.gp.paneldomotica.MainActivity">
+
+    <ImageView
+        android:id="@+id/ivConexion"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="false"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/conexioncorrecta" />
+
+    <TextView
+        android:id="@+id/tvFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="Sabado 20 Octubre 2018 "
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvLogo"
+                android:layout_width="320dp"
+                android:layout_height="340dp"
+                android:background="@drawable/logoapp"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="10" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnAlarma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableBottom="@drawable/lockc"
+                    android:elevation="18dp"
+                    android:shadowColor="#000000"
+                    android:shadowDx="2"
+                    android:shadowDy="5"
+                    android:shadowRadius="10"
+                    android:text="Alarma"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/btnControl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_toEndOf="@+id/btnAlarma"
+                    android:background="@android:color/transparent"
+                    android:drawableBottom="@drawable/control"
+                    android:shadowColor="#000000"
+                    android:shadowDx="2"
+                    android:shadowDy="5"
+                    android:shadowRadius="10"
+                    android:text="Control"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/btnConfiguracion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btnAlarma"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:background="@android:color/transparent"
+                    android:drawableBottom="@drawable/configurar"
+                    android:shadowColor="#000000"
+                    android:shadowDx="2"
+                    android:shadowDy="5"
+                    android:shadowRadius="10"
+                    android:text="Configuracion"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNotificacion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#28010101"
+        android:visibility="invisible">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_viewbotones"
+            android:layout_width="800dp"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvNotificacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal|center"
+                    android:text="Se han detectado cambios"
+                    android:textColor="@android:color/black"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/btnActualizar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_vertical|center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/holo_blue_light"
+                    android:text="  Actualizar  "
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
