@@ -65,4 +65,21 @@ public class alertDialog {
 
     }
 
+    public static void dialogoSpot(Activity activity){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+        LayoutInflater inflater = activity.getLayoutInflater();
+
+        View v = inflater.inflate(R.layout.dialog_spot, null);
+
+        builder.setView(v);
+        builder.setCancelable(false);
+
+        final AlertDialog ad = builder.show();
+        ad.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+    }
+
+
 }

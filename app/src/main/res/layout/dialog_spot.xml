@@ -19,14 +19,14 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvNotificacion"
+                android:id="@+id/tvnombreSpot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal|center"
                 android:text="Se han detectado cambios"
                 android:textColor="@android:color/black"
-                android:textSize="28sp" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -37,28 +37,6 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btnActualizar"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_vertical|center_horizontal"
-                    android:layout_weight="1"
-                    android:background="@drawable/estilo_boton"
-                    android:text="  Actualizar  "
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnCancelar"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_vertical|center_horizontal"
-                    android:layout_marginLeft="40dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/estilo_boton"
-                    android:text="  Despues  "
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp" />
             </LinearLayout>
 
         </RelativeLayout>

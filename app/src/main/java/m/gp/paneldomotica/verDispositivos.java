@@ -132,6 +132,8 @@ public class verDispositivos extends Activity implements View.OnClickListener{
                             return;
                         }
 
+
+
                         if(vg.getObjDispositivos().get(position).isStatus().equals("inactivo")){
 
                             //**Mandar mensaje a servidor

@@ -19,6 +19,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.DisconnectedBufferOptions;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -67,6 +69,7 @@ public class login extends Activity implements View.OnClickListener {
     Button btnEntrar;
     TextView tvCaptcha;
     EditText etcontrasena, etusuario;
+    LottieAnimationView ivAnimation;
 
     /**
      * Variables de la clase
@@ -107,6 +110,7 @@ public class login extends Activity implements View.OnClickListener {
             Toast.makeText(this,"Database failed::: "+e,Toast.LENGTH_SHORT).show();
         }
 
+        ivAnimation= findViewById(R.id.ivAnimation);
 
         btnEntrar = findViewById(R.id.btnEntrar);
         btnEntrar.setOnClickListener(this);
@@ -144,6 +148,7 @@ public class login extends Activity implements View.OnClickListener {
                         async.setLogin(login.this);
                         async.setUsuario(usuario);
                         async.setContrasena(contrasena);
+                        async.setIvAnimation(ivAnimation);
                         async.setOperacion("login");
                         async.execute();
 

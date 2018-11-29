@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ProgressBar;
+
+import com.airbnb.lottie.LottieAnimationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +37,8 @@ public class ws extends AsyncTask<String, Void, String> {
     private String idCliente,usuario, contrasena, operacion;
     private ProgressDialog progressDialog;
 
+    private LottieAnimationView ivAnimation;
+
     /**
      * clases
      */
@@ -49,14 +55,14 @@ public class ws extends AsyncTask<String, Void, String> {
 
         if(!operacion.equals("buscarActualizaciones"))
         {
-
-        progressDialog = new ProgressDialog(context);
+            if(ivAnimation!=null)
+                ivAnimation.setVisibility(View.VISIBLE);
+       /* progressDialog = new ProgressDialog(context);
         progressDialog.setTitle("Validando...");
         progressDialog.setMessage("Un momento.");
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(true);
-        progressDialog.show();
-
+        progressDialog.show();*/
         }
 
     }
@@ -269,8 +275,11 @@ public class ws extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
 
-        if (progressDialog!=null)
-            progressDialog.dismiss();
+       // if (progressDialog!=null)
+        //    progressDialog.dismiss();
+
+        if(ivAnimation!=null)
+        ivAnimation.setVisibility(View.INVISIBLE);
 
             switch (operacion){
                 case "login":
@@ -302,6 +311,8 @@ public class ws extends AsyncTask<String, Void, String> {
     public void setMainActivity(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
     }
+
+    public void setIvAnimation(LottieAnimationView ivAnimation) {this.ivAnimation = ivAnimation;}
 
     public void setAlarmaPIN(m.gp.paneldomotica.alarmaPIN alarmaPIN) {
         this.alarmaPIN = alarmaPIN;

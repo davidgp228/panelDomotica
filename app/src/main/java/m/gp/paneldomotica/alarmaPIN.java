@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,6 +56,8 @@ public class alarmaPIN extends Activity implements View.OnClickListener{
 
     usuario usuario;
 
+    LottieAnimationView ivAnimation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +86,7 @@ public class alarmaPIN extends Activity implements View.OnClickListener{
             Log.d("BD", "alarma empty");
         }
 
+        ivAnimation= findViewById(R.id.ivAnimation);
 
         btnGuardar= findViewById(R.id.btnGuardar);
         btnGuardar.setOnClickListener(this);
@@ -175,6 +180,7 @@ public class alarmaPIN extends Activity implements View.OnClickListener{
 
         //**Habitaciones
         async.setContext(cn);
+        async.setIvAnimation(ivAnimation);
         async.setOperacion("obtenerHabitaciones");
         async.setAlarmaPIN(alarmaPIN.this);
         async.execute();
@@ -207,6 +213,7 @@ public class alarmaPIN extends Activity implements View.OnClickListener{
             //**Dispositivos
             async= new ws();
             async.setContext(context);
+            async.setIvAnimation(ivAnimation);
             async.setAlarmaPIN(alarmaPIN.this);
             async.setOperacion("obtenerDispositivos");
             async.execute();
@@ -243,6 +250,7 @@ public class alarmaPIN extends Activity implements View.OnClickListener{
                 //**Topicos
                 async= new ws();
                 async.setContext(context);
+                async.setIvAnimation(ivAnimation);
                 async.setAlarmaPIN(alarmaPIN.this);
                 async.setOperacion("obtenerTopicos");
                 async.execute();
